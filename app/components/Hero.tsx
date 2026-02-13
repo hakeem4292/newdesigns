@@ -48,6 +48,11 @@ const Hero = () => {
                             </span>
                         </h1>
 
+                        {/* Supporting Line */}
+                        <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl">
+                            Fast, reliable digital printing & creative design solutions in Sharjah.
+                        </p>
+
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap gap-4 sm:gap-4 md:gap-5 pt-4 sm:pt-4">
                             <Link

@@ -51,8 +51,11 @@ function Ourproduct() {
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-2">
                         Our <span className="text-[#D4AF37]">Products</span>
                     </h2>
-                    <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto px-4">
-                        Premium printing solutions for all your business needs
+                    <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto px-4 mb-2">
+                        Explore our wide range of professional printing products
+                    </p>
+                    <p className="text-sm sm:text-base text-white/50 max-w-2xl mx-auto px-4">
+                        From business essentials to promotional materials, we've got you covered
                     </p>
                 </div>
 
@@ -95,12 +98,18 @@ function Ourproduct() {
                 </div>
 
                 {/* CTA Section */}
-                <div className={`text-center mt-8 sm:mt-12 md:mt-16 transition-all duration-800 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <button className="group flex items-center gap-2 sm:gap-3 mx-auto bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 active:shadow-[0_0_30px_rgba(212,175,55,0.5)] active:-translate-y-1 md:hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] md:hover:-translate-y-1 touch-manipulation">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-active:translate-x-1 md:group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 md:mt-16 transition-all duration-800 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <button className="group flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 active:shadow-[0_0_30px_rgba(212,175,55,0.5)] active:-translate-y-1 md:hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] md:hover:-translate-y-1 touch-manipulation w-full sm:w-auto">
+                        <svg className="w-5 h-5 transition-transform group-active:rotate-12 md:group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                         </svg>
-                        View All Products
+                        Request Custom Printing
+                    </button>
+                    <button className="group flex items-center gap-2 sm:gap-3 bg-white/5 border border-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 active:bg-white/10 active:-translate-y-1 md:hover:bg-white/10 md:hover:-translate-y-1 touch-manipulation w-full sm:w-auto">
+                        <svg className="w-5 h-5 transition-transform group-active:translate-x-1 md:group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        View Full Catalogue
                     </button>
                 </div>
             </div>
