@@ -2,12 +2,15 @@
 import Hero from "./components/Hero";
 import Clients from "./components/Clients";
 import About from "./components/About";
-import Ourproduct from "./components/Ourproduct";
 import Mission from "./components/Mission";
-import Services from "./components/Services";
+import ServicesAndProducts from "./components/ServicesAndProducts";
 import CustomerReviews from "./components/CustomerReviews";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Footer from "./components/Footer";
+import ProcessTimeline from "./components/ProcessTimeline";
+import Pricing from "./components/Pricing";
+import ProjectShowcase from "./components/ProjectShowcase";
+import LiveChat from "./components/LiveChat";
 
 export default function Home() {
   return (
@@ -15,11 +18,13 @@ export default function Home() {
       <Hero />
       <Clients />
       <About />
-      <Services />
+      <ServicesAndProducts />
+      <ProcessTimeline />
+      <ProjectShowcase />
       <Mission />
-      <Ourproduct />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <CustomerReviews />
+      <LiveChat />
       <Footer />
     </main>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import StarField from './StarField';
 
 function About() {
     const [isVisible, setIsVisible] = useState(false);
@@ -28,8 +29,16 @@ function About() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative py-24 bg-gradient-to-b from-[#050505] to-black overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <section ref={sectionRef} className="relative py-24 bg-gradient-to-b from-[#050505] via-black to-[#050505] overflow-hidden">
+            {/* Background gradient effects */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
+
+            {/* Star Field Background */}
+            <div className="absolute inset-0 z-0">
+                <StarField />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Side - Print Book Image */}
                     <div className={`relative transition-all duration-800 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>

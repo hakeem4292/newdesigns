@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import StarField from './StarField';
 
 function Clients() {
     const clients = [
@@ -19,8 +20,16 @@ function Clients() {
     ];
 
     return (
-        <section className="relative py-12 bg-gradient-to-b from-[#050505] to-black/95 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <section className="relative py-12 bg-gradient-to-b from-[#050505] via-black to-[#050505] overflow-hidden">
+            {/* Background gradient effects */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
+
+            {/* Star Field Background */}
+            <div className="absolute inset-0 z-0">
+                <StarField />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
                 {/* Simple Heading */}
                 <div className="mb-8">
                     <h3 className="text-xl md:text-2xl font-semibold text-white/80">
@@ -31,7 +40,7 @@ function Clients() {
 
                 {/* Auto-scrolling Container */}
                 <div className="relative">
-                    <div className="flex gap-4 animate-scroll">
+                    <div className="flex gap-4 animate-scroll w-max">
                         {/* First set of logos */}
                         {clients.map((client, i) => (
                             <div

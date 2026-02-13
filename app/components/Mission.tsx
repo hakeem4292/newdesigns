@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import StarField from './StarField';
 
 function Mission() {
     const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +30,15 @@ function Mission() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#050505] to-black overflow-hidden">
+        <section ref={sectionRef} className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#050505] via-black to-[#050505] overflow-hidden">
+            {/* Background gradient effects */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
+
+            {/* Star Field Background */}
+            <div className="absolute inset-0 z-0">
+                <StarField />
+            </div>
+
             {/* Background Decorative Elements */}
             <div className="absolute top-[20%] right-[-5%] w-[30%] h-[30%] bg-[#D4AF37]/5 blur-[100px] rounded-full" />
             <div className="absolute bottom-[20%] left-[-5%] w-[25%] h-[25%] bg-orange-600/5 blur-[80px] rounded-full" />

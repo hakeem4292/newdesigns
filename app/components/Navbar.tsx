@@ -26,9 +26,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl border border-white/10 ${scrolled
-        ? "bg-black/60 backdrop-blur-xl py-2 shadow-2xl"
-        : "bg-black/40 backdrop-blur-md py-3"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl border ${scrolled
+        ? "bg-black/0 border-white/5 backdrop-blur-[1px] py-2 shadow-lg"
+        : "bg-black/60 border-white/10 backdrop-blur-lg py-4 shadow-xl"
         }`}
     >
       <div className="px-6 md:px-10">
@@ -39,15 +39,15 @@ const Navbar = () => {
               {/* Left Side - English Text */}
               <div className="flex flex-col leading-none">
                 <div className="flex items-baseline">
-                  <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#C9A961]">Digital</span>
-                  <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">Line</span>
+                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#C9A961]">Digital</span>
+                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">Line</span>
                 </div>
                 <span className="text-[7px] sm:text-[9px] md:text-[10px] text-white/40 tracking-[0.15em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1">GRAPHICS L.L.C</span>
               </div>
 
               {/* Center - Decorative D Image */}
               <div className="flex items-center">
-                <div className="relative w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                <div className="relative w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12">
                   <Image
                     src="/ddddddd.png"
                     alt="D Logo"
@@ -60,8 +60,8 @@ const Navbar = () => {
               {/* Right Side - Arabic Text */}
               <div className="flex flex-col leading-none text-right">
                 <div className="flex items-baseline">
-                  <span className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-[#C9A961]">الرقمي</span>
-                  <span className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-white">الخط</span>
+                  <span className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold text-[#C9A961]">الرقمي</span>
+                  <span className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold text-white">الخط</span>
                 </div>
                 <span className="text-[7px] sm:text-[9px] md:text-[10px] text-white/40 tracking-wide mt-0.5 sm:mt-1">للتصميم والطباعة ش.ذ.م.م</span>
               </div>
@@ -137,12 +137,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-4">
-            <button className="text-white/60 hover:text-white">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 focus:outline-none transition-all"

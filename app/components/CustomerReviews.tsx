@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import StarField from "./StarField";
 
 const testimonials = [
     {
@@ -8,32 +9,40 @@ const testimonials = [
         name: "Karan Maheshwar",
         role: "Business Owner",
         review: "The t-shirts looked amazing. Soft fabric and the print quality too is really good.",
-        rating: 4,
-        company: "Tech Startup"
+        rating: 5,
+        company: "Tech Startup",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=faces",
+        verified: true
     },
     {
         id: 2,
         name: "Sarah Ahmed",
         role: "Marketing Director",
-        review: "Outstanding service! The brochures were delivered on time and exceeded our expectations. The quality is exceptional.",
+        review: "Outstanding service! The brochures were delivered on time and exceeded our expectations.",
         rating: 5,
-        company: "Digital Agency"
+        company: "Digital Agency",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces",
+        verified: true
     },
     {
         id: 3,
         name: "Rajesh Kumar",
         role: "Event Manager",
-        review: "Professional team with great attention to detail. Our event banners turned out perfect. Highly recommend!",
-        rating: 3,
-        company: "Events Co."
+        review: "Professional team with great attention to detail. Our event banners turned out perfect.",
+        rating: 5,
+        company: "Events Co.",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces",
+        verified: true
     },
     {
         id: 4,
         name: "Priya Sharma",
         role: "Restaurant Owner",
         review: "The menu cards and signage for our restaurant are stunning. Great quality and fast turnaround time.",
-        rating: 1,
-        company: "Culinary Delights"
+        rating: 5,
+        company: "Culinary Delights",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces",
+        verified: true
     },
 ];
 
@@ -74,14 +83,19 @@ export default function CustomerReviews() {
     };
 
     return (
-        <section className="py-20 bg-[#050505] relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-b from-[#050505] via-black to-[#050505] relative overflow-hidden">
             {/* Background gradient effects */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
+
+            {/* Star Field Background */}
+            <div className="absolute inset-0 z-0">
+                <StarField />
+            </div>
 
             {/* Animated background pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, rgba(168, 85, 247, 0.15) 1px, transparent 0)`,
+                    backgroundImage: `radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.15) 1px, transparent 0)`,
                     backgroundSize: '40px 40px'
                 }} />
             </div>
@@ -118,7 +132,7 @@ export default function CustomerReviews() {
                         >
                             <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-12 md:p-16 backdrop-blur-sm relative overflow-hidden">
                                 {/* Decorative gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-50" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 via-transparent to-transparent opacity-50" />
 
                                 <div className="relative z-10 text-center">
                                     {/* Star Rating */}
@@ -129,7 +143,7 @@ export default function CustomerReviews() {
                                                 initial={{ opacity: 0, scale: 0 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 transition={{ delay: i * 0.1 }}
-                                                className="w-8 h-8 fill-purple-500"
+                                                className="w-8 h-8 fill-[#D4AF37]"
                                                 viewBox="0 0 24 24"
                                             >
                                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -142,13 +156,28 @@ export default function CustomerReviews() {
                                         {testimonials[currentIndex].review}
                                     </p>
 
-                                    {/* Customer Name */}
-                                    <div className="mb-6">
-                                        <p className="text-lg font-semibold text-purple-600 dark:text-purple-400 italic">
-                                            – {testimonials[currentIndex].name}
+                                    {/* Customer Profile */}
+                                    <div className="flex flex-col items-center mb-6">
+                                        <div className="relative w-20 h-20 mb-4">
+                                            <img
+                                                src={testimonials[currentIndex].image}
+                                                alt={testimonials[currentIndex].name}
+                                                className="rounded-full object-cover w-full h-full border-2 border-[#D4AF37]"
+                                            />
+                                            {testimonials[currentIndex].verified && (
+                                                <div className="absolute -bottom-2 -right-2 bg-[#D4AF37] text-black text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-lg">
+                                                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                    </svg>
+                                                    VERIFIED
+                                                </div>
+                                            )}
+                                        </div>
+                                        <p className="text-lg font-bold text-white mb-1">
+                                            {testimonials[currentIndex].name}
                                         </p>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                            {testimonials[currentIndex].role} • {testimonials[currentIndex].company}
+                                        <p className="text-sm text-gray-400">
+                                            {testimonials[currentIndex].role} • <span className="text-[#D4AF37]">{testimonials[currentIndex].company}</span>
                                         </p>
                                     </div>
 
@@ -159,8 +188,8 @@ export default function CustomerReviews() {
                                                 key={index}
                                                 onClick={() => goToSlide(index)}
                                                 className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                                                    ? "w-8 bg-purple-500"
-                                                    : "w-2 bg-gray-400 hover:bg-purple-400"
+                                                    ? "w-8 bg-[#D4AF37]"
+                                                    : "w-2 bg-gray-400 hover:bg-[#D4AF37]/50"
                                                     }`}
                                                 aria-label={`Go to testimonial ${index + 1}`}
                                             />
