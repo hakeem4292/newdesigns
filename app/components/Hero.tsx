@@ -84,7 +84,7 @@ const Hero = () => {
                             <div className="bg-white/[0.01] border border-white/5 backdrop-blur-2xl p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] relative group">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-[2rem]" />
                                 <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-white/60 leading-relaxed relative z-10">
-                                    Digital Line Graphics LLC brings 20+ years of expertise in digital printing, graphic design, and pre-press services. With state-of-the-art technology and skilled professionals, we deliver international quality printing solutions in Sharjah.
+                                    Digital Line Graphics LLC brings near than 20 years of expertise in digital printing and graphic design. With state-of-the-art technology and skilled professionals, we are committed to constantly delivering products of international quality to our clients.
                                 </p>
 
                                 {/* Social Proof */}

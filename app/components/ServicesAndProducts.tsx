@@ -79,10 +79,10 @@ export default function ServicesAndProducts() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10">
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.8 }}
                     className="text-center mb-12"
                 >
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
@@ -135,7 +135,7 @@ export default function ServicesAndProducts() {
                     {activeTab === "services" ? (
                         <motion.div
                             key="services"
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.3 }}
@@ -145,7 +145,7 @@ export default function ServicesAndProducts() {
                                 {services.map((service, index) => (
                                     <motion.div
                                         key={index}
-                                        initial={{ opacity: 0, y: 30 }}
+                                        initial={{ opacity: 0, y: 40 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.05 }}
                                         className="group relative"
@@ -187,7 +187,7 @@ export default function ServicesAndProducts() {
                     ) : (
                         <motion.div
                             key="products"
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.3 }}
@@ -197,8 +197,9 @@ export default function ServicesAndProducts() {
                                 {products.map((product, index) => (
                                     <motion.div
                                         key={index}
-                                        initial={{ opacity: 0, y: 30 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        initial={{ opacity: 0, y: 40 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
                                         transition={{ duration: 0.5, delay: index * 0.05 }}
                                         className="group relative bg-white/[0.02] border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden backdrop-blur-sm hover:bg-white/[0.05] hover:border-[#D4AF37] hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] transition-all duration-500 cursor-pointer hover:-translate-y-2"
                                     >
@@ -244,7 +245,7 @@ export default function ServicesAndProducts() {
 
                 {/* CTA Section */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}

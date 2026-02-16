@@ -58,8 +58,9 @@ export default function ProjectShowcase() {
 
             <div className="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                     className="flex flex-col md:flex-row justify-between items-end mb-8 gap-6"
                 >

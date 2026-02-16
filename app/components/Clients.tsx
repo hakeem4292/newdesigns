@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import StarField from './StarField';
 
+import { motion } from "framer-motion";
+
 function Clients() {
     const clients = [
         { name: 'Trade Links Group', logo: '/1652359856-34-trade-links-group.png' },
@@ -29,7 +31,13 @@ function Clients() {
                 <StarField />
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="max-w-7xl mx-auto px-6 md:px-10 relative z-10"
+            >
                 {/* Simple Heading */}
                 <div className="mb-8">
                     <h3 className="text-xl md:text-2xl font-semibold text-white/80">
@@ -71,7 +79,7 @@ function Clients() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

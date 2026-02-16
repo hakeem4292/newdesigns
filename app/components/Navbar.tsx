@@ -60,8 +60,8 @@ const Navbar = () => {
               {/* Right Side - Arabic Text */}
               <div className="flex flex-col leading-none text-right">
                 <div className="flex items-baseline">
-                  <span className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold text-[#C9A961]">الرقمي</span>
                   <span className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold text-white">الخط</span>
+                  <span className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold text-[#C9A961] ml-1">الرقمي</span>
                 </div>
                 <span className="text-[7px] sm:text-[9px] md:text-[10px] text-white/40 tracking-wide mt-0.5 sm:mt-1">للتصميم والطباعة ش.ذ.م.م</span>
               </div>

@@ -34,10 +34,10 @@ export default function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-12">
 
-                    {/* Brand Column (Span 4) */}
-                    <div className="lg:col-span-4 space-y-6">
+                    {/* Brand Column (Span 3) */}
+                    <div className="lg:col-span-3 space-y-6">
                         <Link href="/" className="flex items-center gap-1 sm:gap-1.5 md:gap-2 group transition-transform duration-300 hover:scale-105">
                             {/* Left Side - English Text */}
                             <div className="flex flex-col leading-none">
@@ -63,14 +63,14 @@ export default function Footer() {
                             {/* Right Side - Arabic Text */}
                             <div className="flex flex-col leading-none text-right">
                                 <div className="flex items-baseline">
-                                    <span className="text-lg md:text-xl font-bold text-[#C9A961]">الرقمي</span>
                                     <span className="text-lg md:text-xl font-bold text-white">الخط</span>
+                                    <span className="text-lg md:text-xl font-bold text-[#C9A961] ml-1">الرقمي</span>
                                 </div>
                                 <span className="text-[9px] md:text-[10px] text-white/40 tracking-wide mt-1">للتصميم والطباعة ش.ذ.م.م</span>
                             </div>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-                            Digital Line Graphics delivers premium printing solutions with precision and speed. From business cards to large format, we bring your vision to life.
+                            Digital Line Graphics LLC brings near than 20 years of expertise to Sharjah. We are committed to delivering products of international quality with precision and speed.
                         </p>
                         <div className="flex gap-4 pt-2">
                             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-300 group" aria-label="Facebook">
@@ -92,29 +92,71 @@ export default function Footer() {
                     </div>
 
                     {/* Quick Links (Span 2) */}
-                    <div className="lg:col-span-2 space-y-6">
+                    <div className="md:col-span-1 lg:col-span-2 space-y-6">
                         <h4 className="text-lg font-bold text-white">Company</h4>
                         <ul className="space-y-3 text-gray-400 text-sm">
+                            <li><Link href="/" className="hover:text-[#D4AF37] transition-colors">Home</Link></li>
                             <li><Link href="/about" className="hover:text-[#D4AF37] transition-colors">About Us</Link></li>
                             <li><Link href="/services" className="hover:text-[#D4AF37] transition-colors">Services</Link></li>
-                            <li><Link href="/projects" className="hover:text-[#D4AF37] transition-colors">Projects</Link></li>
                             <li><Link href="/contact" className="hover:text-[#D4AF37] transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
-                    {/* Services Links (Span 2) */}
-                    <div className="lg:col-span-2 space-y-6">
-                        <h4 className="text-lg font-bold text-white">Services</h4>
-                        <ul className="space-y-3 text-gray-400 text-sm">
-                            <li><Link href="/services/printing" className="hover:text-[#D4AF37] transition-colors">Printing</Link></li>
-                            <li><Link href="/services/branding" className="hover:text-[#D4AF37] transition-colors">Branding</Link></li>
-                            <li><Link href="/services/design" className="hover:text-[#D4AF37] transition-colors">Design</Link></li>
-                            <li><Link href="/services/marketing" className="hover:text-[#D4AF37] transition-colors">Marketing</Link></li>
-                        </ul>
+                    {/* Reach Us Column (Span 4) */}
+                    <div className="md:col-span-2 lg:col-span-4 space-y-6">
+                        <h4 className="text-lg font-bold text-white">Reach Us</h4>
+                        <div className="space-y-4 text-gray-400 text-sm">
+                            <div className="flex items-start gap-3 group">
+                                <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <span className="pt-1">Maliha Rd, Muwaileh, Sharjah</span>
+                            </div>
+
+                            <div className="flex items-start gap-3 group">
+                                <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div className="flex flex-col gap-1 pt-1">
+                                    <div className="flex flex-wrap gap-x-3 gap-y-1">
+                                        <a href="tel:+97165778411" className="hover:text-white transition-colors">+971 65778411</a>
+                                        <a href="tel:+97167043572" className="hover:text-white transition-colors">+971 67043572</a>
+                                    </div>
+                                    <div className="flex flex-wrap gap-x-3 gap-y-1 mt-1 border-t border-white/5 pt-1">
+                                        <a href="tel:+971561619111" className="hover:text-white transition-colors">+971 561619111</a>
+                                        <a href="tel:+971501346467" className="hover:text-white transition-colors">+971 501346467</a>
+                                        <a href="tel:+971505552194" className="hover:text-white transition-colors">+971 505552194</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3 group">
+                                <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <a href="mailto:dlinegraphics@gmail.com" className="pt-1 hover:text-white transition-colors">dlinegraphics@gmail.com</a>
+                            </div>
+
+                            <div className="flex items-start gap-3 group">
+                                <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                    </svg>
+                                </div>
+                                <a href="https://www.digitallinegraphics.com" target="_blank" rel="noopener noreferrer" className="pt-1 hover:text-white transition-colors">www.digitallinegraphics.com</a>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Contact Form (Span 4) */}
-                    <div className="lg:col-span-4 space-y-6">
+                    {/* Contact Form (Span 3) */}
+                    <div className="md:col-span-2 lg:col-span-3 space-y-6">
                         <h4 className="text-lg font-bold text-white">Quick Inquiry</h4>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <input
@@ -124,7 +166,7 @@ export default function Footer() {
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             />
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <input
                                     type="text"
                                     placeholder="Phone Number"

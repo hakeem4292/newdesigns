@@ -46,9 +46,10 @@ export default function Pricing() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
                     className="text-center mb-10"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
@@ -63,7 +64,7 @@ export default function Pricing() {
                     {pricingPlans.map((plan, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
