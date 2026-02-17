@@ -7,25 +7,23 @@ import { clientImages } from "../data/clientImages";
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[calc(100vh-20px)] lg:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-pink-50 to-white">
-            {/* Background Image */}
+        <section className="relative min-h-[82vh] lg:h-screen flex items-center justify-center overflow-hidden">
+            {/* Background Video */}
             <div className="absolute inset-0 z-0">
-                <Image
-                    src="/hero-printing.jpg"
-                    alt="Hero Background"
-                    fill
-                    priority
-                    className="object-cover object-center brightness-125"
-                />
-                {/* Overlay for readability - lighter as requested */}
-                <div className="absolute inset-0 bg-white/50" />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="object-cover w-full h-full"
+                >
+                    <source src="/vedio/HEROvedio.mp4" type="video/mp4" />
+                </video>
+                {/* 0.45 dark overlay */}
+                <div className="absolute inset-0 bg-black/45" />
             </div>
 
-            {/* Background Glows */}
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-600/10 blur-[120px] rounded-full z-[1]" />
-            <div className="absolute bottom-[10%] right-[-10%] w-[30%] h-[30%] bg-[#FF5C00]/5 blur-[100px] rounded-full z-[1]" />
-
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10 pt-32 sm:pt-40 lg:pt-20">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10 pt-48 sm:pt-56 lg:pt-32">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-12 items-center h-full">
 
                     {/* Left Content */}
@@ -39,17 +37,29 @@ const Hero = () => {
                         </div> */}
 
                         {/* Headline */}
-                        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-gray-900 leading-[1.05] tracking-tight">
+                        <h1
+                            className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-[#ccc754] leading-[1.05] tracking-tight font-milkyway"
+                            style={{
+                                fontFamily: "'Milkyway', sans-serif",
+                                filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.1))",
+                                WebkitTextStroke: "1px white"
+                            }}
+                        >
                             Premium <br />
                             Printing. <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-800 to-gray-500">
+                            <span
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-[#5F4A8B] to-[#5F4A8B]"
+                                style={{
+                                    WebkitTextStroke: "1px white"
+                                }}
+                            >
                                 Exceptional <br />
                                 Design.
                             </span>
                         </h1>
 
                         {/* Supporting Line */}
-                        <p className="text-lg sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                        <p className="text-lg sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl font-medium drop-shadow-sm">
                             Fast, reliable digital printing & creative design solutions in Sharjah.
                         </p>
 
@@ -57,7 +67,7 @@ const Hero = () => {
                         <div className="flex flex-wrap gap-4 sm:gap-4 md:gap-5 pt-4 sm:pt-4">
                             <Link
                                 href="/contact"
-                                className="group relative w-full sm:w-auto flex items-center justify-center gap-3 sm:gap-3 bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-black px-7 sm:px-7 md:px-8 py-4 sm:py-4 md:py-4 rounded-xl sm:rounded-2xl font-bold text-lg sm:text-base md:text-lg transition-all duration-300 shadow-[0_10px_30px_rgba(212,175,55,0.3)] active:shadow-[0_15px_40px_rgba(212,175,55,0.5)] active:-translate-y-1 md:hover:shadow-[0_15px_40px_rgba(212,175,55,0.5)] md:hover:-translate-y-1 touch-manipulation"
+                                className="group relative w-auto flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-[#5F4A8B] to-[#9F7AEA] text-white px-5 py-3 sm:px-8 sm:py-4 rounded-xl font-bold text-sm sm:text-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(95,74,139,0.5)] hover:-translate-y-1 font-milkyway uppercase tracking-wider border border-white/20"
                             >
                                 <svg className="w-5 h-5 sm:w-5 sm:h-5 transition-transform group-active:translate-x-1 md:group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -67,7 +77,7 @@ const Hero = () => {
 
                             <Link
                                 href="/services"
-                                className="group relative w-full sm:w-auto flex items-center justify-center gap-3 sm:gap-3 bg-white/80 active:bg-white md:hover:bg-white border border-gray-200 text-gray-900 px-7 sm:px-7 md:px-8 py-4 sm:py-4 md:py-4 rounded-xl sm:rounded-2xl font-bold text-lg sm:text-base md:text-lg transition-all duration-300 active:-translate-y-1 md:hover:-translate-y-1 touch-manipulation shadow-sm"
+                                className="group relative w-auto flex items-center justify-center gap-2 sm:gap-3 bg-transparent border-2 border-white/40 text-white px-5 py-3 sm:px-8 sm:py-4 rounded-xl font-bold text-sm sm:text-lg transition-all duration-300 hover:border-white hover:bg-white hover:text-[#1A1A2E] hover:-translate-y-1 shadow-none hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] font-lexend uppercase tracking-wider backdrop-blur-none"
                             >
                                 <svg className="w-5 h-5 sm:w-5 sm:h-5 transition-transform group-active:translate-x-1 md:group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -78,13 +88,13 @@ const Hero = () => {
                     </div>
 
                     {/* Right Content */}
-                    <div className="lg:col-span-5 relative">
+                    <div className="hidden lg:block lg:col-span-5 relative">
                         <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:pl-10">
                             {/* Description box */}
-                            <div className="bg-transparent border border-white/20 backdrop-blur-md p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] relative group shadow-none">
+                            <div className="bg-white/5 border border-white/10 backdrop-blur-[2px] p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] relative group shadow-lg">
                                 <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-[2rem]" />
-                                <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 leading-relaxed relative z-10 font-medium">
-                                    Digital Line Graphics LLC brings near than 20 years of expertise in digital printing and graphic design. With state-of-the-art technology and skilled professionals, we are committed to constantly delivering products of international quality to our clients.
+                                <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed relative z-10 font-medium drop-shadow-md">
+                                    Digital Line Graphics LLC brings more than 20 years of expertise in digital printing and graphic design. With state-of-the-art technology and skilled professionals, we are committed to constantly delivering products of international quality to our clients.
                                 </p>
 
                                 {/* Social Proof */}
@@ -97,14 +107,14 @@ const Hero = () => {
                                                     alt={`Client ${index + 1}`}
                                                     width={40}
                                                     height={40}
-                                                    className="w-full h-full object-cover"
+                                                    className="w-full h-full object-cover rounded-full"
                                                 />
                                             </div>
                                         ))}
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-gray-900 font-bold text-sm sm:text-base">2000+</span>
-                                        <span className="text-gray-700 text-xs sm:text-sm font-medium">Happy Clients</span>
+                                        <span className="text-[#C9A84C] font-bold text-sm sm:text-base drop-shadow-sm">2000+</span>
+                                        <span className="text-gray-200 text-xs sm:text-sm font-medium drop-shadow-sm">Happy Clients</span>
                                     </div>
                                 </div>
                             </div>

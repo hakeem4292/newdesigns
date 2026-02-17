@@ -53,8 +53,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl border ${scrolled
-        ? "bg-white/10 border-white/10 backdrop-blur-md py-1 sm:py-2 shadow-lg" // Glass effect on scroll
-        : "bg-white/70 border-white/20 backdrop-blur-md py-2 sm:py-4 shadow-sm" // Increased whiteness (70%)
+        ? "bg-white border-white/20 backdrop-blur-md py-1 sm:py-2 shadow-lg" // More solid white on scroll
+        : "bg-white/90 border-white/30 backdrop-blur-md py-2 sm:py-4 shadow-sm" // Very white (90%) when not scrolled
         }`}
     >
       <div className="px-4 sm:px-6 md:px-10">
@@ -116,7 +116,7 @@ const Navbar = () => {
                 href="https://wa.me/971505552194"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#D4AF37] hover:bg-[#C9A961] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg shadow-[#D4AF37]/20 flex items-center gap-2"
+                className="bg-gradient-to-r from-[#ACE1AF] to-[#FAF8AB] text-[#1a1a1a] px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-[#ACE1AF]/30 hover:shadow-[#FAF8AB]/40 flex items-center gap-2 border border-white/20"
               >
                 <span>Get a Quote</span>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -197,7 +197,7 @@ const Navbar = () => {
                   href="https://wa.me/971505552194"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-[#D4AF37] hover:bg-[#C9A961] text-white px-4 py-3 rounded-xl text-base font-medium transition-colors shadow-lg shadow-[#D4AF37]/20 flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-[#ACE1AF] to-[#FAF8AB] text-[#1a1a1a] px-4 py-3 rounded-xl text-base font-medium transition-all shadow-lg shadow-[#ACE1AF]/30 flex items-center justify-center gap-2 border border-white/20"
                 >
                   <span>Get a Quote</span>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -4,6 +4,32 @@ html {
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: 'Milkyway';
+    src: url('/fonts/milkyway.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-outfit: 'Outfit', sans-serif;
+    --font-lexend: 'Lexend', sans-serif;
+}
+
+body {
+    font-family: var(--font-outfit);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-lexend);
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -65,6 +91,11 @@ html {
 
 
 @theme {
+    --font-outfit: var(--font-outfit);
+    --font-lexend: var(--font-lexend);
+    --font-dm-serif: var(--font-dm-serif);
+    --font-titan-one: var(--font-titan-one);
+    --font-milkyway: 'Milkyway', sans-serif;
     --animate-marquee: marquee 150s linear infinite;
     --animate-marquee2: marquee2 150s linear infinite;
 

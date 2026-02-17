@@ -20,13 +20,13 @@ function About() {
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    {/* Image Section */}
+                    {/* Image Section - Order 2 on mobile, Order 1 on desktop */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative group"
+                        className="relative group order-last lg:order-first"
                     >
                         <div className="relative h-[300px] sm:h-[500px] w-full rounded-2xl overflow-hidden border border-gray-200 shadow-2xl">
                             <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay z-10" />
@@ -48,7 +48,7 @@ function About() {
                         <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-orange-500/10 to-[#D4AF37]/20 rounded-3xl blur-3xl opacity-50"></div>
                     </motion.div>
 
-                    {/* Content Section */}
+                    {/* Content Section - Order 1 on mobile, Order 2 on desktop */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -57,37 +57,37 @@ function About() {
                         className="space-y-8"
                     >
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                                Crafting Excellence in <br />
-                                <span className="text-[#D4AF37]">Every Print</span>
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                                Where Imagination Meets <br />
+                                <span className="text-[#D4AF37]">Precision Printing</span>
                             </h2>
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                Since 2006, Digital Line Graphics has been at the forefront of the digital printing revolution in Sharjah. We don't just print; we bring visions to life with unparalleled precision and creativity.
+                                Since 2006, Digital Line Graphics has been redefining the art of print in Sharjah. We don't just put ink on paper; we engineer visual experiences. From intricate designs to large-scale branding, we fuse cutting-edge technology with artisanal craftsmanship to bring your wildest visions to vibrant life.
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="flex items-start space-x-4">
-                                <div className="p-3 bg-gray-50 rounded-xl border border-gray-200 text-[#D4AF37] shadow-sm">
-                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="grid grid-cols-2 gap-4 md:gap-8">
+                            <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-4 text-center sm:text-left">
+                                <div className="p-2 sm:p-3 bg-gray-50 rounded-xl border border-gray-200 text-[#D4AF37] shadow-sm shrink-0">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">Quality First</h3>
-                                    <p className="text-gray-500 text-sm">International standards in every project we undertake.</p>
+                                    <h3 className="text-sm sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2 leading-tight">Quality First</h3>
+                                    <p className="hidden sm:block text-gray-500 text-sm">International standards in every project.</p>
                                 </div>
                             </div>
 
-                            <div className="flex items-start space-x-4">
-                                <div className="p-3 bg-gray-50 rounded-xl border border-gray-200 text-[#D4AF37] shadow-sm">
-                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-4 text-center sm:text-left">
+                                <div className="p-2 sm:p-3 bg-gray-50 rounded-xl border border-gray-200 text-[#D4AF37] shadow-sm shrink-0">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">Fast Delivery</h3>
-                                    <p className="text-gray-500 text-sm">Quick turnaround times without compromising quality.</p>
+                                    <h3 className="text-sm sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2 leading-tight">Fast Delivery</h3>
+                                    <p className="hidden sm:block text-gray-500 text-sm">Quick turnaround without compromising quality.</p>
                                 </div>
                             </div>
                         </div>
