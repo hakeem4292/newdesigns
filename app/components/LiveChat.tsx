@@ -19,7 +19,7 @@ export default function LiveChat() {
                         <p className="text-sm text-gray-600 mb-4">Chat with our team directly!</p>
 
                         <a
-                            href="https://wa.me/971500000000"
+                            href="https://wa.me/971505552194"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-3 w-full bg-[#25D366] text-white p-3 rounded-xl mb-2 hover:brightness-110 transition-all font-medium"
@@ -31,7 +31,7 @@ export default function LiveChat() {
                         </a>
 
                         <a
-                            href="tel:+971500000000"
+                            href="tel:+971505552194"
                             className="flex items-center gap-3 w-full bg-black text-white p-3 rounded-xl hover:bg-gray-800 transition-all font-medium"
                         >
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
