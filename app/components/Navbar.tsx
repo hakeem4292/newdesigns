@@ -116,7 +116,7 @@ const Navbar = () => {
                 href="https://wa.me/971505552194"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#ACE1AF] to-[#FAF8AB] text-[#1a1a1a] px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-[#ACE1AF]/30 hover:shadow-[#FAF8AB]/40 flex items-center gap-2 border border-white/20"
+                className="bg-gradient-to-r from-[#5F4A8B] to-[#9F7AEA] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-[#5F4A8B]/30 hover:shadow-[#9F7AEA]/40 flex items-center gap-2 border border-white/20"
               >
                 <span>Get a Quote</span>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -197,7 +197,7 @@ const Navbar = () => {
                   href="https://wa.me/971505552194"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-[#ACE1AF] to-[#FAF8AB] text-[#1a1a1a] px-4 py-3 rounded-xl text-base font-medium transition-all shadow-lg shadow-[#ACE1AF]/30 flex items-center justify-center gap-2 border border-white/20"
+                  className="w-full bg-gradient-to-r from-[#5F4A8B] to-[#9F7AEA] text-white px-4 py-3 rounded-xl text-base font-medium transition-all shadow-lg shadow-[#5F4A8B]/30 flex items-center justify-center gap-2 border border-white/20"
                 >
                   <span>Get a Quote</span>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

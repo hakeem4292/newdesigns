@@ -23,7 +23,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black/45" />
             </div>
 
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10 pt-48 sm:pt-56 lg:pt-32">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10 pt-20 sm:pt-40 lg:pt-32">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-12 items-center h-full">
 
                     {/* Left Content */}
