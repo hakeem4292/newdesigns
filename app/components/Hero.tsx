@@ -31,12 +31,12 @@ const Hero = () => {
                     {/* Left Content */}
                     <div className="lg:col-span-7 flex flex-col space-y-4 sm:space-y-6 md:space-y-8 justify-center">
                         {/* Badge */}
-                        <div className="inline-flex items-center space-x-2 bg-white/80 border border-gray-200 px-4 sm:px-4 py-2 sm:py-2 rounded-full w-fit backdrop-blur-md shadow-sm">
+                        {/* <div className="inline-flex items-center space-x-2 bg-white/80 border border-gray-200 px-4 sm:px-4 py-2 sm:py-2 rounded-full w-fit backdrop-blur-md shadow-sm">
                             <span className="flex h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse" />
-                            {/* <span className="text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-widest text-gray-800">
+                            <span className="text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-widest text-gray-800">
                                 20+ Years of Excellence in Printing & Design
-                            </span> */}
-                        </div>
+                            </span>
+                        </div> */}
 
                         {/* Headline */}
                         <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-gray-900 leading-[1.05] tracking-tight">

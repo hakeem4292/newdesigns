@@ -53,17 +53,17 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl border ${scrolled
-        ? "bg-white/10 border-white/10 backdrop-blur-md py-2 shadow-lg" // Glass effect on scroll
-        : "bg-white/70 border-white/20 backdrop-blur-md py-4 shadow-sm" // Increased whiteness (70%)
+        ? "bg-white/10 border-white/10 backdrop-blur-md py-1 sm:py-2 shadow-lg" // Glass effect on scroll
+        : "bg-white/70 border-white/20 backdrop-blur-md py-2 sm:py-4 shadow-sm" // Increased whiteness (70%)
         }`}
     >
       <div className="px-4 sm:px-6 md:px-10">
-        <div className="flex justify-between items-center h-25 sm:h-20 md:h-19">
+        <div className="flex justify-between items-center h-[70px] sm:h-20 md:h-19">
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="relative flex items-center justify-center h-full w-64 sm:w-72" onClick={(e) => handleScroll(e, "#hero")}>
               <motion.div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[85px] w-[290px] sm:h-[99px] sm:w-[320px] z-50 pointer-events-none"
+                className="absolute top-1/2 left-[calc(50%+2px)] sm:left-1/2 -translate-x-1/2 -translate-y-1/2 h-[85px] w-[290px] sm:h-[99px] sm:w-[320px] z-50 pointer-events-none"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
