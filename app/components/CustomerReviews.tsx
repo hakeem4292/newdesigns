@@ -83,12 +83,12 @@ export default function CustomerReviews() {
     };
 
     return (
-        <section className="py-12 bg-gradient-to-b from-[#050505] via-black to-[#050505] relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-b from-white via-pink-50 to-white relative overflow-hidden">
             {/* Background gradient effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
 
             {/* Star Field Background */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 opacity-30">
                 <StarField />
             </div>
 
@@ -109,7 +109,7 @@ export default function CustomerReviews() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         What our Customers Say,
                     </h2>
                 </motion.div>
@@ -130,9 +130,9 @@ export default function CustomerReviews() {
                             }}
                             className="absolute w-full"
                         >
-                            <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-12 md:p-16 backdrop-blur-sm relative overflow-hidden">
+                            <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-16 shadow-lg relative overflow-hidden">
                                 {/* Decorative gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 via-transparent to-transparent opacity-50" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 via-transparent to-transparent opacity-50" />
 
                                 <div className="relative z-10 text-center">
                                     {/* Star Rating */}
@@ -152,7 +152,7 @@ export default function CustomerReviews() {
                                     </div>
 
                                     {/* Review Text */}
-                                    <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+                                    <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
                                         {testimonials[currentIndex].review}
                                     </p>
 
@@ -165,7 +165,7 @@ export default function CustomerReviews() {
                                                 className="rounded-full object-cover w-full h-full border-2 border-[#D4AF37]"
                                             />
                                             {testimonials[currentIndex].verified && (
-                                                <div className="absolute -bottom-2 -right-2 bg-[#D4AF37] text-black text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-lg">
+                                                <div className="absolute -bottom-2 -right-2 bg-[#D4AF37] text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md">
                                                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                     </svg>
@@ -173,10 +173,10 @@ export default function CustomerReviews() {
                                                 </div>
                                             )}
                                         </div>
-                                        <p className="text-lg font-bold text-white mb-1">
+                                        <p className="text-lg font-bold text-gray-900 mb-1">
                                             {testimonials[currentIndex].name}
                                         </p>
-                                        <p className="text-sm text-gray-400">
+                                        <p className="text-sm text-gray-500">
                                             {testimonials[currentIndex].role} • <span className="text-[#D4AF37]">{testimonials[currentIndex].company}</span>
                                         </p>
                                     </div>
@@ -189,7 +189,7 @@ export default function CustomerReviews() {
                                                 onClick={() => goToSlide(index)}
                                                 className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
                                                     ? "w-8 bg-[#D4AF37]"
-                                                    : "w-2 bg-gray-400 hover:bg-[#D4AF37]/50"
+                                                    : "w-2 bg-gray-300 hover:bg-[#D4AF37]/50"
                                                     }`}
                                                 aria-label={`Go to testimonial ${index + 1}`}
                                             />

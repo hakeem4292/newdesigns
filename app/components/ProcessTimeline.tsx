@@ -33,12 +33,12 @@ export default function ProcessTimeline() {
         setIsMounted(true);
     }, []);
     return (
-        <section className="relative py-20 bg-gradient-to-b from-[#050505] via-black to-[#050505] overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-b from-white via-pink-50 to-white overflow-hidden">
             {/* Background gradient effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
 
             {/* Star Field Background */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 opacity-30">
                 <StarField />
             </div>
 
@@ -51,10 +51,10 @@ export default function ProcessTimeline() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         How We <span className="text-[#D4AF37]">Work</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 max-w-2xl mx-auto">
                         A seamless process from concept to completion
                     </p>
                 </motion.div>
@@ -62,7 +62,7 @@ export default function ProcessTimeline() {
                 {/* Steps */}
                 <div className="relative">
                     {/* Connecting Line (Desktop) */}
-                    <div className="hidden md:block absolute top-[60px] left-0 right-0 h-1 bg-white/10 -z-10">
+                    <div className="hidden md:block absolute top-[60px] left-0 right-0 h-1 bg-gray-200 -z-10">
                         <motion.div
                             initial={{ width: "0%" }}
                             whileInView={{ width: "100%" }}
@@ -73,7 +73,7 @@ export default function ProcessTimeline() {
                     </div>
 
                     {/* Connecting Line (Mobile) */}
-                    <div className="md:hidden absolute left-14 top-0 bottom-0 w-0.5 bg-white/10 -z-10">
+                    <div className="md:hidden absolute left-12 top-0 bottom-0 w-0.5 bg-gray-200 -z-10">
                         <motion.div
                             initial={{ height: "0%" }}
                             whileInView={{ height: "100%" }}
@@ -94,7 +94,7 @@ export default function ProcessTimeline() {
                                 className="relative flex flex-row md:flex-col items-start md:items-center text-left md:text-center group"
                             >
                                 {/* Image Circle */}
-                                <div className={`flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-2 border-[#D4AF37]/20 bg-[#0a0a0a] flex items-center justify-center mb-0 md:mb-6 shadow-[0_0_30px_rgba(0,0,0,0.5)] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-500 z-10 relative overflow-hidden mr-6 md:mr-0`}>
+                                <div className={`flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-2 border-[#D4AF37]/20 bg-white flex items-center justify-center mb-0 md:mb-6 shadow-md group-hover:border-[#D4AF37] group-hover:shadow-lg transition-all duration-500 z-10 relative overflow-hidden mr-6 md:mr-0`}>
                                     <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
                                         <Image
                                             src={step.image}
@@ -105,23 +105,23 @@ export default function ProcessTimeline() {
                                     </div>
 
                                     {/* Mobile Step Badge */}
-                                    <div className="md:hidden absolute -top-1 -right-1 w-8 h-8 bg-[#D4AF37] text-black rounded-full flex items-center justify-center text-xs font-bold shadow-lg border-2 border-black z-20">
+                                    <div className="md:hidden absolute -top-1 -right-1 w-8 h-8 bg-[#D4AF37] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg border-2 border-white z-20">
                                         {index + 1}
                                     </div>
                                 </div>
 
                                 {/* Content */}
-                                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-5 sm:p-6 w-full hover:bg-white/[0.05] transition-colors duration-300 backdrop-blur-sm">
-                                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">
+                                <div className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 w-full hover:border-[#D4AF37]/30 transition-colors duration-300 shadow-sm hover:shadow-md">
+                                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#D4AF37] transition-colors">
                                         {step.title}
                                     </h3>
-                                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                                         {step.description}
                                     </p>
                                 </div>
 
                                 {/* Step Number (Desktop Decor) */}
-                                <div className="hidden md:block absolute -top-4 -right-2 text-6xl font-bold text-white/5 select-none font-serif group-hover:text-[#D4AF37]/5 transition-colors">
+                                <div className="hidden md:block absolute -top-4 -right-2 text-6xl font-bold text-gray-100 select-none font-serif group-hover:text-[#D4AF37]/10 transition-colors">
                                     0{index + 1}
                                 </div>
                             </motion.div>

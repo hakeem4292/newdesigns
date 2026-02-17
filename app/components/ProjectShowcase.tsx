@@ -47,35 +47,32 @@ export default function ProjectShowcase() {
     }, []);
 
     return (
-        <section className="py-16 bg-gradient-to-b from-[#050505] via-black to-[#050505] relative overflow-hidden">
+        <section className="py-16 bg-gradient-to-b from-white via-pink-50 to-white relative overflow-hidden">
             {/* Background gradient effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
 
             {/* Star Field Background */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 opacity-30">
                 <StarField />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+                {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="flex flex-col md:flex-row justify-between items-end mb-8 gap-6"
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
                 >
-                    <div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-                            Recent <span className="text-[#D4AF37]">Work</span>
-                        </h2>
-                        <p className="text-gray-400">
-                            See how we bring brands to life through print.
-                        </p>
-                    </div>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Featured Projects
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] mx-auto rounded-full" />
                 </motion.div>
 
                 {/* Main Showcase */}
-                <div className="relative h-[300px] md:h-[450px] rounded-3xl overflow-hidden group">
+                <div className="relative h-[300px] md:h-[450px] rounded-3xl overflow-hidden group shadow-2xl">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentIndex}
@@ -91,8 +88,8 @@ export default function ProjectShowcase() {
                                 fill
                                 className="object-cover"
                             />
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                            {/* Overlay - Adjusted for Light Theme */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80" />
                         </motion.div>
                     </AnimatePresence>
 
@@ -110,7 +107,7 @@ export default function ProjectShowcase() {
                             <h3 className="text-3xl md:text-5xl font-bold text-white mb-2">
                                 {projects[currentIndex].title}
                             </h3>
-                            <p className="text-gray-300 md:text-xl">
+                            <p className="text-gray-200 md:text-xl">
                                 Client: <span className="text-white">{projects[currentIndex].client}</span>
                             </p>
                         </motion.div>
@@ -129,6 +126,13 @@ export default function ProjectShowcase() {
                             />
                         ))}
                     </div>
+                </div>
+
+                {/* View All Button */}
+                <div className="mt-12 text-center">
+                    <button className="px-8 py-3 rounded-full border border-gray-300 text-gray-700 font-semibold hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] transition-all duration-300 shadow-sm">
+                        View All Projects
+                    </button>
                 </div>
             </div>
         </section>

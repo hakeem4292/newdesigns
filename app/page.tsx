@@ -14,18 +14,18 @@ import LiveChat from "./components/LiveChat";
 
 export default function Home() {
   return (
-    <main className="bg-[#050505] min-h-screen">
-      <Hero />
-      <Clients />
-      <About />
-      <ServicesAndProducts />
-      <ProcessTimeline />
-      <ProjectShowcase />
-      <Mission />
+    <main className="bg-white min-h-screen">
+      <section id="hero"><Hero /></section>
+      <section id="about"><About /></section>
+      <section id="projects"><ProjectShowcase /></section>
+      <section id="services"><ServicesAndProducts /></section>
+      <section id="clients"><Clients /></section>
+      <section id="process"><ProcessTimeline /></section>
+      <section id="mission"><Mission /></section>
       {/* <WhyChooseUs /> */}
-      <CustomerReviews />
+      <section id="testimonials"><CustomerReviews /></section>
       <LiveChat />
-      <Footer />
+      <section id="contact"><Footer /></section>
     </main>
   );
 }

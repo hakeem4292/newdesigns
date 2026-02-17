@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -57,4 +61,30 @@
 .animate-fade-in-right {
     animation: fadeInRight 0.8s ease-out 0.2s forwards;
     opacity: 0;
+}
+
+
+@theme {
+    --animate-marquee: marquee 150s linear infinite;
+    --animate-marquee2: marquee2 150s linear infinite;
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes marquee2 {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
 }

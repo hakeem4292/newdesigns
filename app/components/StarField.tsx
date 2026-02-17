@@ -28,9 +28,9 @@ export default function StarField() {
                 stars.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    size: Math.random() * 2,
+                    size: Math.random() * 1 + 1, // Increased size range (1px to 4px)
                     speed: Math.random() * 0.5 + 0.1,
-                    opacity: Math.random()
+                    opacity: Math.random() * 0.5 + 0.5 // Minimum opacity 0.5
                 });
             }
         };
@@ -39,7 +39,7 @@ export default function StarField() {
             ctx.clearRect(0, 0, width, height);
 
             stars.forEach(star => {
-                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                ctx.fillStyle = `rgba(236, 72, 153, ${star.opacity})`; // Pink stars
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -55,7 +55,7 @@ export default function StarField() {
 
                 // Twinkle
                 star.opacity += (Math.random() - 0.5) * 0.05;
-                if (star.opacity < 0.1) star.opacity = 0.1;
+                if (star.opacity < 0.3) star.opacity = 0.3; // Higher minimum opacity
                 if (star.opacity > 1) star.opacity = 1;
             });
 
@@ -80,7 +80,7 @@ export default function StarField() {
         <canvas
             ref={canvasRef}
             className="absolute inset-0 w-full h-full pointer-events-none"
-            style={{ opacity: 0.6 }} // Subtle overlay
+            style={{ opacity: 1 }} // Full opacity
         />
     );
 }

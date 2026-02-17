@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,54 +18,65 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/", hasDropdown: true },
-    { name: "Services", href: "/services", hasDropdown: true },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Pages", href: "/pages", hasDropdown: true },
-    { name: "Contacts", href: "/contact" },
+    { name: "Home", href: "#hero" },
+    { name: "Services", href: "#services" },
+    { name: "Feature", href: "#projects" },
+    { name: "About", href: "#about" },
+    { name: "Contacts", href: "#contact" },
   ];
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    // If it's a section link
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href);
+      if (element) {
+        const offset = 80; // Height of fixed navbar + padding
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    } else {
+      // If it's a regular route (if any in future)
+      window.location.href = href;
+    }
+  };
 
   return (
     <nav
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl border ${scrolled
-        ? "bg-black/0 border-white/5 backdrop-blur-[1px] py-2 shadow-lg"
-        : "bg-black/60 border-white/10 backdrop-blur-lg py-4 shadow-xl"
+        ? "bg-white/10 border-white/10 backdrop-blur-md py-2 shadow-lg" // Glass effect on scroll
+        : "bg-white/70 border-white/20 backdrop-blur-md py-4 shadow-sm" // Increased whiteness (70%)
         }`}
     >
-      <div className="px-6 md:px-10">
-        <div className="flex justify-between items-center h-16">
+      <div className="px-4 sm:px-6 md:px-10">
+        <div className="flex justify-between items-center h-25 sm:h-20 md:h-19">
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-1 sm:gap-1.5 md:gap-2 group transition-transform duration-300 hover:scale-105">
-              {/* Left Side - English Text */}
-              <div className="flex flex-col leading-none">
-                <div className="flex items-baseline">
-                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#C9A961]">Digital</span>
-                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">Line</span>
-                </div>
-                <span className="text-[7px] sm:text-[9px] md:text-[10px] text-white/40 tracking-[0.15em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1">GRAPHICS L.L.C</span>
-              </div>
-
-              {/* Center - Decorative D Image */}
-              <div className="flex items-center">
-                <div className="relative w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12">
-                  <Image
-                    src="/ddddddd.png"
-                    alt="D Logo"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Right Side - Arabic Text */}
-              <div className="flex flex-col leading-none text-right">
-                <div className="flex items-baseline">
-                  <span className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold text-white">الخط</span>
-                  <span className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold text-[#C9A961] ml-1">الرقمي</span>
-                </div>
-                <span className="text-[7px] sm:text-[9px] md:text-[10px] text-white/40 tracking-wide mt-0.5 sm:mt-1">للتصميم والطباعة ش.ذ.م.م</span>
-              </div>
+            <Link href="/" className="relative flex items-center justify-center h-full w-64 sm:w-72" onClick={(e) => handleScroll(e, "#hero")}>
+              <motion.div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[85px] w-[290px] sm:h-[99px] sm:w-[320px] z-50 pointer-events-none"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Image
+                  src="/Newlogo.png"
+                  alt="Digital Line Graphics"
+                  fill
+                  className="object-contain pointer-events-auto"
+                  priority
+                />
+              </motion.div>
             </Link>
           </div>
 
@@ -72,34 +84,20 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-10">
             <div className="flex items-baseline space-x-8">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center group text-white/80 hover:text-white px-2 py-2 text-sm font-medium transition-all"
+                  onClick={(e) => handleScroll(e, link.href)}
+                  className="flex items-center group text-gray-700 hover:text-black px-2 py-2 text-sm font-medium transition-all cursor-pointer"
                 >
                   {link.name}
-                  {link.hasDropdown && (
-                    <svg
-                      className="ml-1 w-3 h-3 text-white/40 group-hover:text-white/80 transition-transform duration-300 group-hover:rotate-180"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  )}
-                </Link>
+                </a>
               ))}
             </div>
 
             {/* Search and CTA */}
-            <div className="flex items-center space-x-6 border-l border-white/10 pl-8">
-              <button className="text-white/60 hover:text-white transition-colors cursor-pointer">
+            <div className="flex items-center space-x-6 border-l border-black/10 pl-8">
+              <button className="text-gray-500 hover:text-black transition-colors cursor-pointer">
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -114,25 +112,17 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-              <Link
-                href="/get-started"
-                className="flex items-center gap-2 bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-black px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:-translate-y-0.5"
+              <a
+                href="https://wa.me/971505552194"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#D4AF37] hover:bg-[#C9A961] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg shadow-[#D4AF37]/20 flex items-center gap-2"
               >
-                Get Started
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.5"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
+                <span>Get a Quote</span>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -140,28 +130,12 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 focus:outline-none transition-all"
+              className="text-gray-700 hover:text-black p-2 transition-colors"
             >
-              <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
+              <span className="sr-only">Open menu</span>
+              {isOpen ? (
                 <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -173,6 +147,20 @@ const Navbar = () => {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
               )}
             </button>
           </div>
@@ -180,40 +168,47 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0"
-          }`}
-      >
-        <div className="px-4 pt-2 pb-6 space-y-2 bg-black/40 backdrop-blur-xl border-t border-white/5 mx-4 mb-4 rounded-xl">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white/70 hover:text-white hover:bg-white/10 block px-4 py-3 rounded-xl text-base font-medium transition-all flex items-center justify-between"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-              {link.hasDropdown && (
-                <svg className="w-4 h-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                </svg>
-              )}
-            </Link>
-          ))}
-          <div className="pt-4 px-4">
-            <Link
-              href="/get-started"
-              className="w-full flex justify-center items-center gap-2 bg-gradient-to-r from-[#FF5C00] to-[#FF8A00] text-white py-4 rounded-xl font-bold transition-all shadow-lg"
-              onClick={() => setIsOpen(false)}
-            >
-              Get Started
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 overflow-hidden rounded-b-2xl"
+          >
+            <div className="px-4 pt-2 pb-6 space-y-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleScroll(e, link.href)}
+                  className="block px-3 py-4 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-xl transition-all border-b border-gray-50 last:border-0"
+                >
+                  <div className="flex items-center justify-between">
+                    {link.name}
+                    <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+              ))}
+              <div className="pt-4 flex flex-col gap-3">
+                <a
+                  href="https://wa.me/971505552194"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#D4AF37] hover:bg-[#C9A961] text-white px-4 py-3 rounded-xl text-base font-medium transition-colors shadow-lg shadow-[#D4AF37]/20 flex items-center justify-center gap-2"
+                >
+                  <span>Get a Quote</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const services = [
     {
-        title: "Business Cards",
-        subtitle: "Printing Services",
+        title: "Printing Services",
+        subtitle: "Business Cards Printing in Dubai",
         image: "/service/printingservice.webp",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -14,7 +14,7 @@ const services = [
     },
     {
         title: "Dairy & Calendar",
-        subtitle: "Custom Designs",
+        subtitle: "Business Cards Printing in Dubai",
         image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=500&q=80",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,7 +24,7 @@ const services = [
     },
     {
         title: "Bags & Packaging",
-        subtitle: "Premium Quality",
+        subtitle: "Business Cards Printing in Dubai",
         image: "/service/BAGSPACKAGING.webp",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,8 +33,8 @@ const services = [
         ),
     },
     {
-        title: "Gift Items",
-        subtitle: "Corporate Gifting",
+        title: "Gift Item",
+        subtitle: "Business Cards Printing in Dubai",
         image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=500&q=80",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,17 +44,17 @@ const services = [
     },
     {
         title: "Badges & Indoor Signs",
-        subtitle: "Professional Signage",
+        subtitle: "Business Cards Printing in Dubai",
         image: "/service/badges.jpg",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
             </svg>
         ),
     },
     {
         title: "T-Shirt & Uniform",
-        subtitle: "Custom Apparel",
+        subtitle: "Business Cards Printing in Dubai",
         image: "/service/uniform.jpg",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ const services = [
     },
     {
         title: "Indoor & Outdoor",
-        subtitle: "Advertising Solutions",
+        subtitle: "Business Cards Printing in Dubai",
         image: "/service/indoorOutdoor.jpg",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@ const services = [
     },
     {
         title: "Plaques & Trophies",
-        subtitle: "Awards & Recognition",
+        subtitle: "Business Cards Printing in Dubai",
         image: "/service/Wooden-Printed-Plaques-Trophies.jpg",
         icon: (
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ const services = [
 
 export default function Services() {
     return (
-        <section className="py-20 bg-[#050505] relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-b from-white via-pink-50 to-white relative overflow-hidden">
             {/* Background gradient effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 via-transparent to-transparent pointer-events-none" />
 
@@ -99,14 +99,14 @@ export default function Services() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Our Services
                     </h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] mx-auto rounded-full" />
                 </motion.div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -117,35 +117,29 @@ export default function Services() {
                             className="group relative"
                         >
                             {/* Card */}
-                            <div className="bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden aspect-square transition-all duration-500 hover:border-[#D4AF37]/50 hover:shadow-2xl hover:shadow-[#D4AF37]/20 backdrop-blur-sm relative">
+                            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden aspect-square transition-all duration-500 hover:border-[#D4AF37]/50 hover:shadow-2xl hover:shadow-[#D4AF37]/10 relative shadow-sm">
                                 {/* Background Image */}
                                 <div
-                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-10 group-hover:opacity-20"
                                     style={{ backgroundImage: `url(${service.image})` }}
                                 />
-
-                                {/* Dark overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/90 transition-opacity duration-500 group-hover:from-black/40 group-hover:via-black/60 group-hover:to-black/80" />
-
-                                {/* Hover gradient effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                 {/* Content */}
                                 <div className="relative z-10 h-full flex flex-col items-start justify-end text-left p-6">
                                     {/* Icon container */}
-                                    <div className="mb-3 text-[#D4AF37] transform transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-lg">
+                                    <div className="mb-3 text-[#D4AF37] transform transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-md">
                                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             {service.icon.props.children}
                                         </svg>
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="text-base font-bold text-white mb-1 transition-all duration-300 group-hover:text-[#D4AF37] drop-shadow-lg">
+                                    <h3 className="text-base font-bold text-gray-900 mb-1 transition-all duration-300 group-hover:text-[#D4AF37]">
                                         {service.title}
                                     </h3>
 
                                     {/* Subtitle */}
-                                    <p className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-white drop-shadow-md">
+                                    <p className="text-xs text-gray-500 transition-colors duration-300 group-hover:text-gray-700">
                                         {service.subtitle}
                                     </p>
                                 </div>
