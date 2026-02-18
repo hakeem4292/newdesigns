@@ -38,9 +38,9 @@ function Clients() {
                         {[...clientImages, ...clientImages].map((src, index) => (
                             <div
                                 key={`c1-${index}`}
-                                className="flex-shrink-0 w-32 h-20 md:w-60 md:h-40 bg-white border border-gray-200 rounded-xl p-2 md:p-4 flex items-center justify-center transition-all duration-300 hover:border-[#D4AF37]/50 hover:shadow-lg relative overflow-hidden group/card"
+                                className="flex-shrink-0 w-48 h-28 md:w-72 md:h-48 bg-white border border-gray-200 rounded-xl p-2 md:p-4 flex items-center justify-center transition-all duration-300 hover:border-[#D4AF37]/50 hover:shadow-lg relative overflow-hidden group/card"
                             >
-                                
+
                                 <div className="relative w-full h-full">
                                     <Image
                                         src={src}
@@ -57,7 +57,7 @@ function Clients() {
                         {[...clientImages, ...clientImages].map((src, index) => (
                             <div
                                 key={`c2-${index}`}
-                                className="flex-shrink-0 w-32 h-20 md:w-60 md:h-40 bg-white border border-gray-200 rounded-xl p-2 md:p-4 flex items-center justify-center transition-all duration-300 hover:border-[#D4AF37]/50 hover:shadow-lg relative overflow-hidden group/card"
+                                className="flex-shrink-0 w-48 h-28 md:w-72 md:h-48 bg-white border border-gray-200 rounded-xl p-2 md:p-4 flex items-center justify-center transition-all duration-300 hover:border-[#D4AF37]/50 hover:shadow-lg relative overflow-hidden group/card"
                             >
                                 <div className="relative w-full h-full">
                                     <Image

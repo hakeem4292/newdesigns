@@ -232,7 +232,7 @@ export default function Hero() {
                         <div className="hero-fade-in hfi-4 grid grid-cols-2 sm:flex sm:flex-row gap-3">
                             <Link
                                 href="/contact"
-                                className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#C9A961] to-[#D4AF37] px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(201,168,76,0.45)] active:scale-[0.98]"
+                                className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#C9A961] to-[#D4AF37] px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-bold font-lexend text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(201,168,76,0.45)] active:scale-[0.98]"
                             >
                                 Get a Quote
                                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
@@ -240,7 +240,7 @@ export default function Hero() {
 
                             <Link
                                 href="/services"
-                                className="group inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-[#C9A84C]/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+                                className="group inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-bold font-lexend text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-[#C9A84C]/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
                             >
                                 <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#C9A84C]" />
                                 Our Services
