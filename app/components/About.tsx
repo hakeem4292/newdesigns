@@ -115,8 +115,8 @@ export default function About() {
                 <ThreeBackground />
             </Suspense>
 
-            {/* Overlay — dark on mobile, light on desktop */}
-            <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/70 via-white/40 to-white/70" />
+            {/* Overlay — lighter on mobile so Three.js shows, stronger on desktop for readability */}
+            <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/30 via-white/15 to-white/30 lg:from-white/70 lg:via-white/40 lg:to-white/70" />
 
             {/* === CONTENT === */}
             <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-14 sm:py-24 lg:py-32">

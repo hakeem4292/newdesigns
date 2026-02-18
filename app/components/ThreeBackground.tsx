@@ -231,9 +231,9 @@ function Scene({ isMobile }: { isMobile: boolean }) {
             <Environment preset="city" environmentIntensity={isMobile ? 0.5 : 0.8} />
 
             {/* Lighting */}
-            <ambientLight intensity={isMobile ? 1 : 0.8} color="#FFF8E1" />
-            <pointLight position={[5, 5, 5]} intensity={isMobile ? 1.5 : 2} color="#D4AF37" castShadow={!isMobile} />
-            <pointLight position={[-5, -3, 3]} intensity={isMobile ? 0.6 : 1} color="#C9A84C" />
+            <ambientLight intensity={isMobile ? 1.5 : 0.8} color="#FFF8E1" />
+            <pointLight position={[5, 5, 5]} intensity={isMobile ? 2.5 : 2} color="#D4AF37" castShadow={!isMobile} />
+            <pointLight position={[-5, -3, 3]} intensity={isMobile ? 1.5 : 1} color="#C9A84C" />
             {!isMobile && (
                 <>
                     <pointLight position={[0, 4, -5]} intensity={0.6} color="#FFD700" />
@@ -249,8 +249,8 @@ function Scene({ isMobile }: { isMobile: boolean }) {
             )}
 
             {/* Gold Metallic Shapes — fewer on mobile */}
-            <GoldShape position={[-3.5, 1.5, -2]} geometry="torus" scale={isMobile ? 0.4 : 0.55} speed={0.4} distort={isMobile ? 0.15 : 0.25} />
-            <GoldShape position={[3.5, -1, -1]} geometry="icosahedron" scale={isMobile ? 0.5 : 0.7} speed={0.3} distort={0.15} />
+            <GoldShape position={isMobile ? [-2, 2, -1] : [-3.5, 1.5, -2]} geometry="torus" scale={isMobile ? 0.55 : 0.55} speed={0.4} distort={isMobile ? 0.15 : 0.25} />
+            <GoldShape position={isMobile ? [2.5, -1.5, -1] : [3.5, -1, -1]} geometry="icosahedron" scale={isMobile ? 0.6 : 0.7} speed={0.3} distort={0.15} />
             {!isMobile && (
                 <GoldShape position={[0, 2.5, -3]} geometry="octahedron" scale={0.45} speed={0.5} distort={0.3} />
             )}
@@ -264,13 +264,13 @@ function Scene({ isMobile }: { isMobile: boolean }) {
             )}
 
             {/* Gold Rings */}
-            <GoldRing position={[2, 1.8, -2]} scale={isMobile ? 0.3 : 0.4} />
+            <GoldRing position={isMobile ? [0, 0, -1.5] : [2, 1.8, -2]} scale={isMobile ? 0.45 : 0.4} />
             {!isMobile && <GoldRing position={[-4, -0.5, -3]} scale={0.3} />}
 
             {/* Drei Sparkles */}
             <Sparkles
-                count={isMobile ? 30 : 80}
-                size={isMobile ? 2 : 2.5}
+                count={isMobile ? 60 : 80}
+                size={isMobile ? 3 : 2.5}
                 speed={0.4}
                 color="#D4AF37"
                 scale={isMobile ? [10, 8, 6] : [15, 10, 8]}
@@ -278,7 +278,7 @@ function Scene({ isMobile }: { isMobile: boolean }) {
             />
 
             {/* Custom gold particles */}
-            <GoldParticles count={isMobile ? 50 : 120} />
+            <GoldParticles count={isMobile ? 80 : 120} />
 
             {/* Camera Rig for subtle motion */}
             <CameraRig />
