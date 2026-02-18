@@ -130,9 +130,23 @@ h6 {
     --font-lexend: var(--font-lexend);
     --font-dm-serif: var(--font-dm-serif);
     --font-titan-one: var(--font-titan-one);
+    --font-sora: var(--font-sora);
+    --font-oswald: var(--font-oswald);
+    --font-rajdhani: var(--font-rajdhani);
     --font-milkyway: 'Milkyway', sans-serif;
     --animate-marquee: marquee 150s linear infinite;
     --animate-marquee2: marquee2 150s linear infinite;
+    --animate-about-shimmer: about-shimmer 2.5s ease-in-out infinite;
+
+    @keyframes about-shimmer {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(100%);
+        }
+    }
 
     @keyframes marquee {
         0% {
@@ -231,10 +245,11 @@ h6 {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
     }
 }

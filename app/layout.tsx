@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Lexend, DM_Serif_Display, Titan_One } from "next/font/google";
+import { Outfit, Lexend, DM_Serif_Display, Titan_One, Sora, Oswald, Rajdhani } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
@@ -25,6 +25,22 @@ const titanOne = Titan_One({
   subsets: ["latin"],
 });
 
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+});
+
+const rajdhani = Rajdhani({
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-rajdhani",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "DigitalLine Graphics",
   description: "Premium Printing and Design",
@@ -38,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${outfit.variable} ${lexend.variable} ${dmSerif.variable} ${titanOne.variable} antialiased`}
+        className={`${outfit.variable} ${lexend.variable} ${dmSerif.variable} ${titanOne.variable} ${sora.variable} ${oswald.variable} ${rajdhani.variable} antialiased`}
       >
         <Navbar />
         {children}
