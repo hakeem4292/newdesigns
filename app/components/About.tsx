@@ -28,7 +28,7 @@ function About() {
                         transition={{ duration: 0.8 }}
                         className="relative group order-last lg:order-first"
                     >
-                        <div className="relative h-[300px] sm:h-[500px] w-full rounded-2xl overflow-hidden border border-gray-200 shadow-2xl">
+                        <div className="relative h-[300px] sm:h-[500px] w-full rounded-t-none rounded-b-[3rem] overflow-hidden border border-gray-200 shadow-2xl">
                             <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay z-10" />
                             <Image
                                 src="/printbook.jpg"
@@ -41,11 +41,11 @@ function About() {
                         </div>
 
                         {/* Decorative Elements - Adjusted for light theme */}
-                        <div className="absolute -z-10 top-[-20px] left-[-20px] w-2/3 h-2/3 border-2 border-[#D4AF37]/20 rounded-2xl" />
-                        <div className="absolute -z-10 bottom-[-20px] right-[-20px] w-2/3 h-2/3 border-2 border-[#D4AF37]/20 rounded-2xl" />
+                        <div className="absolute -z-10 top-[-20px] left-[-20px] w-2/3 h-2/3 border-2 border-[#D4AF37]/20 rounded-t-none rounded-b-[3rem]" />
+                        <div className="absolute -z-10 bottom-[-20px] right-[-20px] w-2/3 h-2/3 border-2 border-[#D4AF37]/20 rounded-t-none rounded-b-[3rem]" />
 
                         {/* Glow effect - Adjusted for light theme */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-orange-500/10 to-[#D4AF37]/20 rounded-3xl blur-3xl opacity-50"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-orange-500/10 to-[#D4AF37]/20 rounded-t-none rounded-b-[3rem] blur-3xl opacity-50"></div>
                     </motion.div>
 
                     {/* Content Section - Order 1 on mobile, Order 2 on desktop */}

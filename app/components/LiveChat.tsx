@@ -6,7 +6,7 @@ export default function LiveChat() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="fixed bottom-6 left-6 z-50 flex items-start gap-4 flex-col-reverse">
+        <div className="fixed bottom-6 right-6 z-50 flex items-end gap-4 flex-col-reverse">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -47,7 +47,7 @@ export default function LiveChat() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-[#D4AF37] text-black p-4 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transition-all duration-300 relative group"
+                className="bg-[#D4AF37] text-black p-5 rounded-full shadow-[0_0_25px_rgba(212,175,55,0.5)] hover:shadow-[0_0_40px_rgba(212,175,55,0.7)] transition-all duration-300 relative group z-[9999]"
             >
                 {isOpen ? (
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

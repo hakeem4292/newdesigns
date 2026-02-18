@@ -53,8 +53,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl border ${scrolled
-        ? "bg-white border-white/20 backdrop-blur-md py-1 sm:py-2 shadow-lg" // More solid white on scroll
-        : "bg-white/90 border-white/30 backdrop-blur-md py-2 sm:py-4 shadow-sm" // Very white (90%) when not scrolled
+        ? "bg-white/15 backdrop-blur-sm border-white/10 py-1 sm:py-2 shadow-lg"
+        : "bg-white border-gray-100 py-2 sm:py-4 shadow-sm"
         }`}
     >
       <div className="px-4 sm:px-6 md:px-10">
@@ -116,7 +116,7 @@ const Navbar = () => {
                 href="https://wa.me/971505552194"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#5F4A8B] to-[#9F7AEA] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-[#5F4A8B]/30 hover:shadow-[#9F7AEA]/40 flex items-center gap-2 border border-white/20"
+                className="bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-black px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-[#C9A84C]/25 hover:shadow-[#D4AF37]/40 hover:scale-[1.02] flex items-center gap-2"
               >
                 <span>Get a Quote</span>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -174,7 +174,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 overflow-hidden rounded-b-2xl"
+            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden rounded-b-2xl"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
@@ -197,7 +197,7 @@ const Navbar = () => {
                   href="https://wa.me/971505552194"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-[#5F4A8B] to-[#9F7AEA] text-white px-4 py-3 rounded-xl text-base font-medium transition-all shadow-lg shadow-[#5F4A8B]/30 flex items-center justify-center gap-2 border border-white/20"
+                  className="w-full bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-black px-4 py-3 rounded-xl text-base font-bold transition-all shadow-lg shadow-[#C9A84C]/25 hover:shadow-[#D4AF37]/40 flex items-center justify-center gap-2"
                 >
                   <span>Get a Quote</span>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
