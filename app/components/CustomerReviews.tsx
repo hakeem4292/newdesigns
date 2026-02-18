@@ -109,7 +109,7 @@ export default function CustomerReviews() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-rajdhani">
                         What our Customers Say,
                     </h2>
                 </motion.div>

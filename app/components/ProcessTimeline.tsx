@@ -51,10 +51,10 @@ export default function ProcessTimeline() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-rajdhani">
                         How We <span className="text-[#D4AF37]">Work</span>
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-gray-600 max-w-2xl mx-auto font-rajdhani">
                         A seamless process from concept to completion
                     </p>
                 </motion.div>
@@ -112,10 +112,10 @@ export default function ProcessTimeline() {
 
                                 {/* Content */}
                                 <div className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 w-full hover:border-[#D4AF37]/30 transition-colors duration-300 shadow-sm hover:shadow-md">
-                                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#D4AF37] transition-colors">
+                                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#D4AF37] transition-colors font-rajdhani">
                                         {step.title}
                                     </h3>
-                                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-rajdhani">
                                         {step.description}
                                     </p>
                                 </div>

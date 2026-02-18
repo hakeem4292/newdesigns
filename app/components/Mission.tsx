@@ -32,7 +32,6 @@ function Mission() {
                                 <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">Our Purpose</span>
                             </div>
                             <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] uppercase">
-                                Delivering Excellence <br />
                                 <span className="text-[#D4AF37]">Our Mission</span>
                             </h2>
                             <div className="w-16 sm:w-24 h-1.5 sm:h-2 bg-[#D4AF37] rounded-full" />
@@ -81,8 +80,8 @@ function Mission() {
                                 className="relative h-[250px] sm:h-[450px] md:h-[500px] w-[95%] sm:w-[90%] lg:w-full rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.12)] border-4 sm:border-8 border-white"
                             >
                                 <Image
-                                    src="/machineeeee.jpg"
-                                    alt="Advanced Printing Machine"
+                                    src="/hero_printing_workspace_1770791580734.png"
+                                    alt="Printing Workspace"
                                     fill
                                     className="object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 />

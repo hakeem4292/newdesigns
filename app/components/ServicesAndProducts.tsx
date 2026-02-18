@@ -85,11 +85,11 @@ export default function ServicesAndProducts() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-rajdhani">
                         What We <span className="text-[#D4AF37]">Offer</span>
                     </h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto rounded-full mb-6" />
-                    <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+                    <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-10 font-rajdhani">
                         Explore our comprehensive range of printing <span className="text-[#D4AF37]">services</span> and <span className="text-[#D4AF37]">products</span>
                     </p>
 
@@ -97,7 +97,7 @@ export default function ServicesAndProducts() {
                     <div className="flex justify-center gap-4 sm:gap-6">
                         <button
                             onClick={() => setActiveTab("services")}
-                            className={`relative px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl transition-all duration-300 ${activeTab === "services"
+                            className={`relative px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl transition-all duration-300 font-rajdhani ${activeTab === "services"
                                 ? "text-gray-900 bg-white border border-[#D4AF37]/50 shadow-md"
                                 : "text-gray-500 bg-white/50 border border-gray-200 hover:bg-white hover:text-gray-900"
                                 }`}
@@ -113,7 +113,7 @@ export default function ServicesAndProducts() {
                         </button>
                         <button
                             onClick={() => setActiveTab("products")}
-                            className={`relative px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl transition-all duration-300 ${activeTab === "products"
+                            className={`relative px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl transition-all duration-300 font-rajdhani ${activeTab === "products"
                                 ? "text-gray-900 bg-white border border-[#D4AF37]/50 shadow-md"
                                 : "text-gray-500 bg-white/50 border border-gray-200 hover:bg-white hover:text-gray-900"
                                 }`}
@@ -167,12 +167,12 @@ export default function ServicesAndProducts() {
                                             {/* Content */}
                                             <div className="relative z-10 h-full flex flex-col items-start justify-end text-left p-4 sm:p-6">
                                                 {/* Title */}
-                                                <h3 className="text-sm sm:text-base font-bold text-white mb-1 transition-all duration-300 group-hover:text-[#D4AF37] drop-shadow-md">
+                                                <h3 className="text-sm sm:text-base font-bold text-white mb-1 transition-all duration-300 group-hover:text-[#D4AF37] drop-shadow-md font-rajdhani">
                                                     {service.title}
                                                 </h3>
 
                                                 {/* Subtitle */}
-                                                <p className="text-xs text-gray-200 transition-colors duration-300 group-hover:text-white drop-shadow-sm">
+                                                <p className="text-xs text-gray-200 transition-colors duration-300 group-hover:text-white drop-shadow-sm font-rajdhani">
                                                     {service.subtitle}
                                                 </p>
                                             </div>
@@ -221,7 +221,7 @@ export default function ServicesAndProducts() {
 
                                         {/* Title Overlay */}
                                         <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-4 z-10">
-                                            <h3 className="text-white font-bold text-sm sm:text-base md:text-lg group-hover:text-[#D4AF37] transition-colors duration-300 leading-tight drop-shadow-md">
+                                            <h3 className="text-white font-bold text-sm sm:text-base md:text-lg group-hover:text-[#D4AF37] transition-colors duration-300 leading-tight drop-shadow-md font-rajdhani">
                                                 {product.title}
                                             </h3>
                                         </div>
@@ -243,13 +243,13 @@ export default function ServicesAndProducts() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-12 md:mt-16"
                 >
-                    <button className="group flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 touch-manipulation w-full sm:w-auto">
+                    <button className="group flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-[#C9A961] to-[#D4AF37] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 touch-manipulation w-full sm:w-auto font-rajdhani">
                         <svg className="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                         </svg>
                         Request Custom Printing
                     </button>
-                    <button className="group flex items-center gap-2 sm:gap-3 bg-white border border-gray-200 text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:bg-gray-50 hover:-translate-y-1 touch-manipulation w-full sm:w-auto hover:border-[#D4AF37]/50">
+                    <button className="group flex items-center gap-2 sm:gap-3 bg-white border border-gray-200 text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:bg-gray-50 hover:-translate-y-1 touch-manipulation w-full sm:w-auto hover:border-[#D4AF37]/50 font-rajdhani">
                         <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
