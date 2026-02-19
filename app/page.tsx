@@ -5,7 +5,6 @@ import About from "./components/About";
 import Mission from "./components/Mission";
 import ServicesAndProducts from "./components/ServicesAndProducts";
 import CustomerReviews from "./components/CustomerReviews";
-import WhyChooseUs from "./components/WhyChooseUs";
 import Footer from "./components/Footer";
 import ProcessTimeline from "./components/ProcessTimeline";
 import Pricing from "./components/Pricing";
@@ -22,7 +21,6 @@ export default function Home() {
       <section id="clients"><Clients /></section>
       <section id="process"><ProcessTimeline /></section>
       <section id="mission"><Mission /></section>
-      {/* <WhyChooseUs /> */}
       <section id="testimonials"><CustomerReviews /></section>
       <LiveChat />
       <section id="contact"><Footer /></section>

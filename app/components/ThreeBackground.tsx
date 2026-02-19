@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useMemo, useCallback } from "react";
+import React, { useRef, useMemo, useCallback, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
     Float,
@@ -49,7 +49,7 @@ function GoldShape({
     const geo = useMemo(() => {
         switch (geometry) {
             case "torus":
-                return <torusKnotGeometry args={[1, 0.35, 128, 32]} />;
+                return <torusKnotGeometry args={[1, 0.35, 48, 12]} />;
             case "icosahedron":
                 return <icosahedronGeometry args={[1, 1]} />;
             case "octahedron":
@@ -138,7 +138,7 @@ function GoldRing({
     return (
         <Float speed={0.5} rotationIntensity={1} floatIntensity={0.8}>
             <mesh ref={meshRef} position={position} scale={scale} castShadow>
-                <torusGeometry args={[1, 0.15, 32, 64]} />
+                <torusGeometry args={[1, 0.15, 16, 32]} />
                 <meshStandardMaterial
                     color="#D4AF37"
                     metalness={0.98}
@@ -153,7 +153,7 @@ function GoldRing({
 /* =============================
    PARTICLE CLOUD — Gold dust
    ============================= */
-function GoldParticles({ count = 150 }: { count?: number }) {
+function GoldParticles({ count = 60 }: { count?: number }) {
     const points = useRef<THREE.Points>(null!);
 
     const positions = useMemo(() => {
@@ -267,9 +267,9 @@ function Scene({ isMobile }: { isMobile: boolean }) {
             <GoldRing position={isMobile ? [0, 0, -1.5] : [2, 1.8, -2]} scale={isMobile ? 0.45 : 0.4} />
             {!isMobile && <GoldRing position={[-4, -0.5, -3]} scale={0.3} />}
 
-            {/* Drei Sparkles */}
+            {/* Drei Sparkles — reduced counts */}
             <Sparkles
-                count={isMobile ? 60 : 80}
+                count={isMobile ? 20 : 40}
                 size={isMobile ? 3 : 2.5}
                 speed={0.4}
                 color="#D4AF37"
@@ -277,8 +277,8 @@ function Scene({ isMobile }: { isMobile: boolean }) {
                 opacity={0.6}
             />
 
-            {/* Custom gold particles */}
-            <GoldParticles count={isMobile ? 80 : 120} />
+            {/* Custom gold particles — reduced */}
+            <GoldParticles count={isMobile ? 30 : 60} />
 
             {/* Camera Rig for subtle motion */}
             <CameraRig />
@@ -310,14 +310,28 @@ function Scene({ isMobile }: { isMobile: boolean }) {
 export default function ThreeBackground() {
     const isMobile = useIsMobile();
 
+    // Pause rendering when tab is inactive
+    const handleCreated = useCallback((state: { gl: THREE.WebGLRenderer }) => {
+        const gl = state.gl;
+        gl.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+
+        const handleVisibility = () => {
+            if (document.hidden) {
+                gl.setAnimationLoop(null);
+            }
+        };
+        document.addEventListener("visibilitychange", handleVisibility);
+    }, []);
+
     return (
         <div className="absolute inset-0 z-0">
             <Canvas
                 camera={{ position: [0, 0, 7], fov: isMobile ? 55 : 50 }}
-                dpr={isMobile ? [1, 1] : [1, 1.5]}
+                dpr={[1, Math.min(window.devicePixelRatio ?? 1, 1.5)]}
                 gl={{ antialias: !isMobile, alpha: true, powerPreference: "high-performance" }}
                 style={{ background: "transparent" }}
                 shadows={!isMobile}
+                onCreated={handleCreated}
             >
                 <Scene isMobile={isMobile} />
             </Canvas>

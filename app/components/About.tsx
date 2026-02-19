@@ -1,7 +1,8 @@
 "use client";
 
 import React, { Suspense } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -104,16 +105,21 @@ const fadeUp = {
 
 /* ─────────────────────────── ABOUT COMPONENT ─────────────────────────── */
 export default function About() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.1 });
+
     return (
-        <section className="relative overflow-hidden bg-white">
-            {/* === THREE.JS BACKGROUND === */}
-            <Suspense
-                fallback={
-                    <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white" />
-                }
-            >
-                <ThreeBackground />
-            </Suspense>
+        <section ref={ref} className="relative overflow-hidden bg-white">
+            {/* === THREE.JS BACKGROUND - Optimized for performance === */}
+            {isInView && (
+                <Suspense
+                    fallback={
+                        <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white" />
+                    }
+                >
+                    <ThreeBackground />
+                </Suspense>
+            )}
 
             {/* Overlay — lighter on mobile so Three.js shows, stronger on desktop for readability */}
             <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/30 via-white/15 to-white/30 lg:from-white/70 lg:via-white/40 lg:to-white/70" />
