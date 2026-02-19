@@ -36,6 +36,7 @@ function WireframeShape({
     return (
         <mesh position={position} scale={scale} rotation={rotation}>
             {geo}
+            {/* Ultra-Performance: Standard Material Only */}
             <meshStandardMaterial
                 color="#D4AF37"
                 wireframe
@@ -43,6 +44,8 @@ function WireframeShape({
                 opacity={0.35}
                 metalness={0.9}
                 roughness={0.1}
+                emissive="#D4AF37"
+                emissiveIntensity={0.1} // Reduced
             />
         </mesh>
     );
@@ -196,17 +199,7 @@ function ProjectScene({ isMobile }: { isMobile: boolean }) {
             {/* Static Particles */}
             <StaticParticles count={isMobile ? 40 : 80} />
 
-            {/* Post-processing — Keep on desktop for visuals, disable on mobile for perf */}
-            {!isMobile && (
-                <EffectComposer>
-                    <Bloom
-                        intensity={0.3}
-                        luminanceThreshold={0.5}
-                        luminanceSmoothing={0.9}
-                        mipmapBlur
-                    />
-                </EffectComposer>
-            )}
+            {/* Post-processing — REMOVED for Performance */}
         </>
     );
 }
@@ -217,7 +210,7 @@ function ProjectScene({ isMobile }: { isMobile: boolean }) {
 /* ==========================================
    MAIN EXPORT
    ========================================== */
-export default function ProjectShowcaseThree() {
+const ProjectShowcaseThree = React.memo(() => {
     // 1. Fix Hydration Mismatch & Window Access
     const [mounted, setMounted] = React.useState(false);
     // Reuse the existing hook logic but validly
@@ -232,19 +225,23 @@ export default function ProjectShowcaseThree() {
     return (
         <div className="absolute inset-0 z-0">
             <Canvas
-                frameloop="demand" // Critical for preventing lag
+                frameloop="demand"
                 camera={{ position: [0, 0, 7], fov: isMobile ? 55 : 50 }}
-                dpr={[1, typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 1.5) : 1]}
+                dpr={[1, 1]}
                 gl={{
-                    antialias: !isMobile,
+                    antialias: false,
                     alpha: true,
                     powerPreference: "high-performance",
                     preserveDrawingBuffer: false,
                 }}
                 style={{ background: "transparent" }}
+                shadows={false} // Disabled shadows for max perf
             >
                 <ProjectScene isMobile={isMobile} />
             </Canvas>
         </div>
     );
-}
+});
+
+ProjectShowcaseThree.displayName = "ProjectShowcaseThree";
+export default ProjectShowcaseThree;

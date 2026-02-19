@@ -8,8 +8,6 @@ import {
     Sparkles,
     Environment,
 } from "@react-three/drei";
-import { EffectComposer, Bloom, ChromaticAberration } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
 
 /* ============================================================
@@ -44,26 +42,14 @@ function GoldShape({
     return (
         <mesh position={position} scale={scale} castShadow rotation={rotation}>
             {geo}
-            {isMobile ? (
-                // Mobile: Bright Gold Standard Material
-                <meshStandardMaterial
-                    color="#FFD700"
-                    metalness={1}
-                    roughness={0.15}
-                    emissive="#FFD700"
-                    emissiveIntensity={0.2}
-                />
-            ) : (
-                // Desktop: Premium Distort
-                <MeshDistortMaterial
-                    color="#D4AF37"
-                    metalness={0.95}
-                    roughness={0.08}
-                    distort={distort}
-                    speed={0}
-                    envMapIntensity={2.5}
-                />
-            )}
+            {/* Ultra-Performance: Standard Material Only */}
+            <meshStandardMaterial
+                color={isMobile ? "#FFD700" : "#D4AF37"}
+                metalness={0.95}
+                roughness={0.1}
+                emissive={isMobile ? "#FFD700" : "#000000"}
+                emissiveIntensity={isMobile ? 0.2 : 0}
+            />
         </mesh>
     );
 }
@@ -83,20 +69,16 @@ function GlassCrystal({
     return (
         <mesh position={position} scale={scale} castShadow rotation={rotation}>
             <dodecahedronGeometry args={[1, 0]} />
-            <MeshTransmissionMaterial
-                backside
-                samples={4} // Reduced samples for performance
-                thickness={0.5}
-                chromaticAberration={0.3}
-                anisotropy={0.3}
-                distortion={0.2}
-                distortionScale={0.3}
-                temporalDistortion={0}
-                ior={1.5}
+            {/* Ultra-Performance: Physical Material (Simulated Glass) */}
+            <meshPhysicalMaterial
                 color="#F5E6A3"
-                roughness={0}
-                transmission={1}
-                envMapIntensity={2}
+                metalness={0.1}
+                roughness={0.1}
+                transparent
+                opacity={0.4}
+                transmission={0.6} // Just simulates
+                thickness={0.5}
+                ior={1.5}
             />
         </mesh>
     );
@@ -225,23 +207,7 @@ function Scene({ isMobile }: { isMobile: boolean }) {
             {/* Static Gold Particles */}
             <StaticGoldParticles count={isMobile ? 40 : 80} />
 
-            {/* Post-processing — Keep for premium look, use demand frameloop to mitigate cost */}
-            {!isMobile && (
-                <EffectComposer>
-                    <Bloom
-                        intensity={0.4}
-                        luminanceThreshold={0.6}
-                        luminanceSmoothing={0.9}
-                        mipmapBlur
-                    />
-                    <ChromaticAberration
-                        blendFunction={BlendFunction.NORMAL}
-                        offset={new THREE.Vector2(0.0005, 0.0005)}
-                        radialModulation={false}
-                        modulationOffset={0}
-                    />
-                </EffectComposer>
-            )}
+            {/* Post-processing — REMOVED for Maximum Performance */}
         </>
     );
 }
@@ -249,26 +215,32 @@ function Scene({ isMobile }: { isMobile: boolean }) {
 /* ============================
    MAIN EXPORT
    ============================ */
-export default function ThreeBackground() {
+/* ============================
+   MAIN EXPORT
+   ============================ */
+const ThreeBackground = React.memo(() => {
     const isMobile = useIsMobile();
 
     return (
         <div className="absolute inset-0 z-0">
             <Canvas
-                frameloop="demand" // Critical: Only render when props change (effectively once since static)
+                frameloop="demand"
                 camera={{ position: [0, 0, 7], fov: isMobile ? 55 : 50 }}
-                dpr={[1, Math.min(window.devicePixelRatio ?? 1, 1.5)]}
+                dpr={[1, 1]}
                 gl={{
-                    antialias: !isMobile,
+                    antialias: false,
                     alpha: true,
                     powerPreference: "high-performance",
                     preserveDrawingBuffer: false,
                 }}
                 style={{ background: "transparent" }}
-                shadows={!isMobile}
+                shadows={false} // Disabled shadows for max perf
             >
                 <Scene isMobile={isMobile} />
             </Canvas>
         </div>
     );
-}
+});
+
+ThreeBackground.displayName = "ThreeBackground";
+export default ThreeBackground;
