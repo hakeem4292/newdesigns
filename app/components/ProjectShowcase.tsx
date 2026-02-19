@@ -115,9 +115,9 @@ export default function ProjectShowcase() {
     const timerRef = useRef<NodeJS.Timeout>(null);
     const progressIntervalRef = useRef<NodeJS.Timeout>(null);
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.1 });
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
 
-    const AUTO_DELAY = 3000; // 3 seconds per slide
+    const AUTO_DELAY = 5000; // 5 seconds per slide (More readable)
 
     // Reset progress whenever index changes
     useEffect(() => {
@@ -163,52 +163,45 @@ export default function ProjectShowcase() {
     return (
         <section className="py-20 md:py-32 relative overflow-hidden bg-gradient-to-b from-white via-amber-50/20 to-white">
             {/* Three.js Background — Only render when in view for performance */}
-            <div ref={ref} className="absolute inset-0 z-0 opacity-30">
+            <div ref={ref} className="absolute inset-0 z-0 opacity-30 pointer-events-none">
                 {isInView && <ProjectShowcaseThree />}
             </div>
 
             {/* Content Container */}
             <div className="max-w-7xl mx-auto px-5 md:px-10 relative z-10">
-                {/* Header */}
+                {/* Header — REDESIGNED */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.7 }}
-                    className="text-center mb-12 md:mb-16"
+                    className="text-center mb-16 md:mb-20"
                 >
-                    <motion.span
-                        initial={{ opacity: 0, letterSpacing: "0.3em" }}
-                        whileInView={{ opacity: 1, letterSpacing: "0.2em" }}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-[#D4AF37] font-semibold text-xs md:text-sm uppercase tracking-[0.2em] block mb-3"
+                        transition={{ duration: 0.5 }}
+                        className="inline-block px-3 py-1 mb-4 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/5"
                     >
-                        Our Portfolio
-                    </motion.span>
-                    <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-5 font-[var(--font-oswald)]">
-                        Featured Projects
+                        <span className="text-[#D4AF37] font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] font-[var(--font-rajdhani)]">
+                            Our Masterpieces
+                        </span>
+                    </motion.div>
+
+                    <h2 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 font-[var(--font-oswald)] uppercase tracking-tight">
+                        Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#B8960F]">Works</span>
                     </h2>
-                    <div className="flex items-center justify-center gap-3">
-                        <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: 48 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="h-[3px] bg-gradient-to-r from-transparent to-[#D4AF37] rounded-full"
-                        />
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
-                        <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: 48 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="h-[3px] bg-gradient-to-l from-transparent to-[#D4AF37] rounded-full"
-                        />
+
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                        <div className="h-[1px] w-12 bg-gray-300" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
+                        <div className="h-[1px] w-12 bg-gray-300" />
                     </div>
-                    <p className="mt-5 text-gray-500 max-w-xl mx-auto text-sm md:text-lg font-[var(--font-sora)]">
-                        A showcase of our finest work — from luxury branding to
-                        premium packaging solutions
+
+                    <p className="max-w-xl mx-auto text-sm md:text-lg text-gray-500 font-light font-[var(--font-sora)]">
+                        A curated selection of our finest printing and branding projects,
+                        where precision meets luxury.
                     </p>
                 </motion.div>
 

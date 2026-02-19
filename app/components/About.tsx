@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 const ThreeBackground = dynamic(() => import("./ThreeBackground"), {
     ssr: false,
     loading: () => (
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+        <div className="absolute inset-0 bg-transparent" />
     ),
 });
 
@@ -106,7 +106,7 @@ const fadeUp = {
 /* ─────────────────────────── ABOUT COMPONENT ─────────────────────────── */
 export default function About() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.1 });
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
 
     return (
         <section ref={ref} className="relative overflow-hidden bg-white">
